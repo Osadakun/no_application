@@ -16,24 +16,25 @@ ActiveRecord::Schema.define(version: 2022_05_11_132832) do
   enable_extension "plpgsql"
 
   create_table "orders", force: :cascade do |t|
-    t.text "name"
-    t.text "enemy_name"
-    t.text "first_double_1"
-    t.text "first_double_2"
-    t.text "first_single"
-    t.text "second_double_1"
-    t.text "second_double_2"
+    t.text "name", null: false
+    t.text "enemy_name", null: false
+    t.text "first_double_1", null: false
+    t.text "first_double_2", null: false
+    t.text "first_single", null: false
+    t.text "second_double_1", null: false
+    t.text "second_double_2", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "team_id", null: false
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string "name"
-    t.string "member1"
-    t.string "member2"
-    t.string "member3"
-    t.string "member4"
-    t.string "member5"
+    t.string "name", null: false
+    t.string "member1", null: false
+    t.string "member2", null: false
+    t.string "member3", null: false
+    t.string "member4", null: false
+    t.string "member5", null: false
     t.string "member6"
     t.string "member7"
     t.string "member8"
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 2022_05_11_132832) do
     t.string "member10"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "team_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,11 +51,13 @@ ActiveRecord::Schema.define(version: 2022_05_11_132832) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "name"
+    t.text "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "team_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["team_id"], name: "team_id", unique: true
   end
 
 end
