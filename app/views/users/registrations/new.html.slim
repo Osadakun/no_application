@@ -5,7 +5,7 @@ h2
   .field
     = f.label 'チーム名'
     br
-    = f.email_field :name
+    = f.text_field :name
   .field
     = f.label 'メールアドレス'
     br
@@ -24,5 +24,5 @@ h2
     br
     = f.password_field :password_confirmation, autocomplete: "new-password"
   .actions
-    = f.submit "Sign up"
+    = f.submit "アカウントを作成"
 = render "users/shared/links"
