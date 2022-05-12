@@ -14,6 +14,7 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   # DELETE /resource/sign_out
+  # ここは config/initializers/devise.rb で config.sign_out_via = :get としているので DELETE ではなく GET
   def destroy
     super
   end
@@ -21,6 +22,7 @@ class Users::SessionsController < Devise::SessionsController
   protected
 
   # If you have extra params to permit, append them to the sanitizer.
+  # 許可するための追加のパラメータがある場合は、sanitizer に追加してください
   def configure_sign_in_params
     devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   end

@@ -19,11 +19,13 @@ class Users::UnlocksController < Devise::UnlocksController
   protected
 
   # The path used after sending unlock password instructions
+   # パスワードのロック解除指示を送信した後に使用する path
   def after_sending_unlock_instructions_path_for(resource)
     super(resource)
   end
 
   # The path used after unlocking the resource
+  # リソースのロックを解除した後に使用する path
   def after_unlock_path_for(resource)
     super(resource)
   end

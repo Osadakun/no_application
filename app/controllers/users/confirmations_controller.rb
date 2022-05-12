@@ -19,11 +19,13 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   protected
 
   # The path used after resending confirmation instructions.
+  # 確認指示を再送した後に使用する path
   def after_resending_confirmation_instructions_path_for(resource_name)
     super(resource_name)
   end
 
   # The path used after confirmation.
+  # 確認後に使用する path
   def after_confirmation_path_for(resource_name, resource)
     super(resource_name, resource)
   end

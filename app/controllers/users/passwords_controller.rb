@@ -28,6 +28,7 @@ class Users::PasswordsController < Devise::PasswordsController
   end
 
   # The path used after sending reset password instructions
+  # リセットパスワードの指示を送信した後に使用する path
   def after_sending_reset_password_instructions_path_for(resource_name)
     super(resource_name)
   end
